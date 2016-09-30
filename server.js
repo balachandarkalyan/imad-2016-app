@@ -6,7 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleone = {
+var articles={
+'article-one': {
   title : 'article one|ballu',
   heading:'article one',
   date:'sep5',
@@ -23,6 +24,25 @@ var articleone = {
                 dsdsdsdsdsdsdsd
             </p>`
     
+},
+'article-two': {
+    title : 'article 2|ballu',
+  heading:'article 2',
+  date:'sep25',
+  content:`
+  <p>
+                222dsdsdsdsdsdsdsd  dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dfdfdfdfdfefefewfrwgsaegejgn
+            </p>`
+    
+},
+'article-three':{title : 'article 3|ballu',
+  heading:'article 3',
+  date:'sep29',
+  content:`
+  <p>
+              33  dsdsdsdsdsdsdsd  dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dfdfdfdfdfefefewfrwgsaegejgn
+            </p>`
+            
 };
 function createTemplate (data) {
     var title = data.title;
@@ -63,8 +83,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleone))
+app.get('/articleName', function (req, res) {
+    var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
