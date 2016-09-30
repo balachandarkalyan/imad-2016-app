@@ -35,7 +35,8 @@ var articles={
             </p>`
     
 },
-'article-three':{title : 'article 3|ballu',
+'article-three':{
+    title : 'article 3|ballu',
   heading:'article 3',
   date:'sep29',
   content:`
@@ -43,7 +44,7 @@ var articles={
               33  dsdsdsdsdsdsdsd  dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dsdsdsdsdsdsdsd dfdfdfdfdfefefewfrwgsaegejgn
             </p>`
             
-};
+}};
 function createTemplate (data) {
     var title = data.title;
     var date=data.date;
